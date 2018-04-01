@@ -1,0 +1,46 @@
+<div class="example-container">
+  <mat-card style="padding:80px"> 
+      <mat-card-title>REGISTRATION</mat-card-title>
+      <mat-card-content>
+        <form [formGroup]='regForm' >
+          <div style="padding:10px">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Enter your Name" formControlName="name">
+              <mat-error *ngIf="!(regForm.controls['name'].valid&& (regForm.controls['name'].dirty || regForm.controls['name'].touched))">Invalid Input</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div style="padding:10px">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Enter your Username" formControlName="username">
+              <mat-error *ngIf="!regForm.controls['username'].valid">Invalid Input</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div style="padding:10px">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Enter your Email" formControlName='email'>
+              <mat-error *ngIf="!regForm.controls['email'].valid">Invalid Input</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div style="padding:10px">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Enter your Password" formControlName="password">
+              <mat-error *ngIf="!regForm.controls['password'].valid">Invalid Input</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div style="padding:20px">
+            <button mat-raised-button color="primary" (click)="onRegister(regForm.value);regForm.reset()">Register</button>
+            <button type = "button "mat-raised-button (click)="regForm.reset()">Cancel</button>
+        </div>
+
+        </form>
+        
+      </mat-card-content>
+      
+  </mat-card>
+
+
+</div>

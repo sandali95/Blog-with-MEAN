@@ -1,0 +1,11 @@
+<mat-toolbar >My  App
+    <span class="example-spacer"></span>
+  <ul>
+      <button mat-button *ngIf="authService.isLoggedIn()" (click)="onDashboard()">Dashboard</button>
+      <button mat-button *ngIf="authService.isLoggedIn()" (click)="onProfile()">Profile</button>
+      <button mat-button *ngIf="authService.isLoggedIn()" (click)="onLogout()">LogOut</button>
+
+    <button mat-button *ngIf="!authService.isLoggedIn()" (click)="onLogin()">Login</button>
+    <button mat-button *ngIf="!authService.isLoggedIn()" (click)="onRegister()">Register</button>
+  </ul>
+</mat-toolbar>

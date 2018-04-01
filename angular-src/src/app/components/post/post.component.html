@@ -1,0 +1,29 @@
+<div class="example-container">
+    <mat-toolbar>Add New Post</mat-toolbar>
+    <form class="example-form" #postForm="ngForm" (ngSubmit)="onPost()">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Title"  id="title" name="title" [(ngModel)]="post.title"  #title="ngModel" required>
+          <mat-error *ngIf="title.invalid && (title.dirty || title.touched)">Invalid Input</mat-error>
+        </mat-form-field>
+      
+        <mat-form-field class="example-full-width">
+            <textarea matInput placeholder="Post Content" matTextareaAutosize matAutosizeMinRows="1" matAutosizeMaxRows="10"
+            id="content" name="content" [(ngModel)]="post.content" #content="ngModel" required></textarea>
+            <mat-error *ngIf="content.invalid && (content.dirty || content.touched)">Invalid Input</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-select placeholder="Category" id="category" name="category" [(ngModel)]="post.category" #cat="ngModel">
+                <mat-option *ngFor="let cat of category" [value]="cat" >
+                  {{ cat }}
+                </mat-option>
+              </mat-select>
+        </mat-form-field>
+
+        <div>
+            <button mat-raised-button color="primary">Post</button>
+            <button mat-raised-button (click)="onClose()">Cancel</button>
+          </div>
+
+      </form>     
+</div>

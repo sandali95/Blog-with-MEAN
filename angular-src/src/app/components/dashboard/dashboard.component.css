@@ -1,0 +1,24 @@
+.add-new{
+    padding: 20px;
+    float: right;
+}
+
+.post{
+    padding: 20px;
+    margin: 5px;
+}
+
+.modify-icons{
+    padding: 10px;
+    float: right;
+}
+
+.material-icons.update { 
+    color: #004D40;
+    padding: 10px; 
+}
+
+.material-icons.remove{
+    color:#B71C1C;
+    padding: 10px;
+}

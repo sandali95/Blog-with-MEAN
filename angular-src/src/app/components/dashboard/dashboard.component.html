@@ -1,0 +1,28 @@
+<div class="add-new" *ngIf="authService.isLoggedIn()">
+    <button mat-fab color="primary" (click)="openDialog()"><i class="material-icons">note_add</i></button>
+</div>
+
+<div *ngFor="let post of posts">
+    <mat-accordion class="post">
+        <mat-expansion-panel (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <Strong>{{post.title}}</Strong>
+                </mat-panel-title>
+                <mat-panel-description>
+                    <i class="material-icons">person_pin</i><strong>{{post.author}}</strong>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+                    <p><i class="material-icons">date_range</i>{{post.date}}</p>
+                    <p>{{post.content}}</p>
+                    <p class="modify-icons" *ngIf="authService.isLoggedIn()">
+                        <i class="material-icons update">border_color</i>
+                        <i class="material-icons remove">delete</i>              
+                    </p>
+            </mat-expansion-panel>
+            
+    </mat-accordion>
+
+        
+</div>
