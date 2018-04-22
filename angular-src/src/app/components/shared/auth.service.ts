@@ -32,7 +32,9 @@ export class AuthService {
 
   //add new user
   registerUser(user){
-    
+    let headers = new HttpHeaders();
+    headers = headers.set('content-type','application/json');
+    return this.http.post<Authorization>('http://localhost:3000/users/register',user,{headers:headers});
   }
 
 
